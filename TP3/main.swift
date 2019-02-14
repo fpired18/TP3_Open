@@ -26,17 +26,17 @@ func gameMenu() {
     var numberLoop = 0
     let banner = """
           
-                 |  |  _          _              _
-                 |--| (_ | |  _  (   _  |  _| ° (_ /)  _ ° |
-                 |  |_(__|_|_(_)__)_(_)_|_(_|_|_(_/(_ | )__|
+                 |  |  _          _              _         ,|
+                 |--| (_ | |  _  (   _  |  _| ° (_ /)  _ °  |
+                 |  |_(__|_|_(_)__)_(_)_|_(_|_|_(_/(__| )___|_
                           
                          
         """
     let banner1 = """
 
-                 |  |  _          _              _        ,__
-                 |--| (_ | |  _  (   _  |  _| ° (_ /)  _ °| /
-                 |  |_(__|_|_(_)__)_(_)_|_(_|_|_(_/(_ | )__/__
+                 |  |  _          _              _         ,__
+                 |--| (_ | |  _  (   _  |  _| ° (_ /)  _ ° | /
+                 |  |_(__|_|_(_)__)_(_)_|_(_|_|_(_/(__| )___/__
 
 
         """
@@ -78,7 +78,7 @@ func gameMenu() {
         return check
     }
   
-//Recording function that selelcts the team in relation to the palyer's number
+//Recording function that selects the team in relation to the palyer's number
     func recordName (numberGamer: Int, typeWarrior: Soldiers, numberTime: Int, check: Bool) {
         let soldier = typeWarrior
         let gamerNumber = numberGamer
@@ -91,6 +91,7 @@ func gameMenu() {
         if numberGamer == 1 && !check {
             newPartOfGame.maxPointOfLiveTeam1 += typeWarrior.numberPointsOfLive
             team1.team.append(soldier)
+            team1.number = gamerNumber
         }
         if numberGamer == 1 && !check && numberLoop == 3 {
             newPartOfGame.viewTeam(team: team1, gamerNumber: gamerNumber)
@@ -99,6 +100,7 @@ func gameMenu() {
         if numberGamer == 2 && !check {
             newPartOfGame.maxPointOfLiveTeam2 += typeWarrior.numberPointsOfLive
             team2.team.append(soldier)
+            team2.number = gamerNumber
         }
 
         if numberGamer == 2 && numberLoop == 3 {
@@ -125,9 +127,9 @@ func gameMenu() {
 // numberTurn counts cycle. This will inform the winner at the end of the game
             numberTurn += 1
             var controle = true
-            print("\n======================================"
+            print("\n=============================="
             + "\n\(gamerPseudo) WANT TO FIGHT OR CARE ? "
-            + "\n======================================"
+            + "\n=============================="
                 + "\nStape : 1 to fight "
                 + "\nStape : 2 to care ")
             if let choice = readLine() {
