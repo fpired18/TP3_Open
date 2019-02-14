@@ -97,7 +97,6 @@ class PartOfGame {
         
         print("\nHere is what came out of the chest: \(newWeapon).")
         switch soldier.team[choiseInInt1].type {
-            
         case "magus":
             if choice == "2" {
                 if newWeapon == "Drugs" || newWeapon == "Injection" {
@@ -236,8 +235,7 @@ class PartOfGame {
             }
             if numberGamer == 1 {
                 maxPointOfLiveTeam2 = maxPointOfLiveTeamSwap1
-            }
-            else {
+            } else {
                 maxPointOfLiveTeam1 = maxPointOfLiveTeamSwap1
             }
             displayBattleResul()
@@ -245,7 +243,7 @@ class PartOfGame {
     
         if choice == "2" {
             validation = true
-            // Cette boucle a pour mission de controler la présence de Mage dans l'équipe et si celui-ci est encore en vie
+            // This loop has the mission to control the presence of a magus in the team and if it is still alive
 
             for i in 0...2 {
                 if teamSwap1.team[i].type == "magus" {
