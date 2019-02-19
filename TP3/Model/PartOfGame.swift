@@ -63,7 +63,9 @@ class PartOfGame {
         let soldier = team
         
         if let choice = readLine() {
-            choiseInIntSwap1 = Int(choice)! - 1
+            if choice == "1" || choice == "2" || choice == "3" {
+                choiseInIntSwap1 = Int(choice)! - 1
+            }
             switch choice {
             case "1":
                 soldier.team[0] = team.team[0]
@@ -133,7 +135,7 @@ class PartOfGame {
     }
     
     func choiceSoldier(choice: String, numberGamer: Int, team1: Teams, team2: Teams){
-// The soldier seledtion function inverts the team accordint to the palyer's number
+// The soldier selection function inverts the team accordint to the palyer's number
         var teamSwap1 = team1
         var teamSwap2 = team2
         var soldierSwap1 = soldier1
